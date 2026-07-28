@@ -23,7 +23,7 @@ You can install the development version of `bcirr` directly from GitHub:
 ## Usage Example
 
 The package includes the dataset `OtaDuPaul2002` for demonstration. The
-following script loads the data, formats it, and runs the bias-corrected
+following script loads the data, formats it, and runs the 
 GEE model.
 
     library(bcirr)
