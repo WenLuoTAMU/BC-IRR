@@ -43,7 +43,7 @@ GEE model.
         binary = Phase
       )
 
-    # 3. Fit the GEE model with bias correction
+    # 3. Fit the GEE model 
     # Family is poisson because the outcome is count/frequency data
     fit_auto <- bc_irr_gee(
       formula = outcome ~ binary * time,
