@@ -19,11 +19,10 @@ Authors@R: c(
            role = "ctb",
            email = "haoranli@umn.edu")        
            )
-Description: Provides functions to estimate between-case incidence rate ratios (IRR) using Generalized Estimating Equations (GEE). Designed specifically for across-participants multiple baseline single-case experimental designs (SCED) with small sample sizes, implementing corrections such as the Kauermann-Carroll method. Includes the 'OtaDuPaul2002' dataset for demonstration.
+Description: Provides functions to estimate between-case incidence rate ratios (IRR) using Generalized Estimating Equations (GEE). Designed specifically for across-participants multiple baseline single-case experimental designs (SCED) with small sample sizes, implementing corrections such as the Kauermann-Carroll method. Includes the 'OtaDuPaul2002' and 'Cihak2010' datasets for demonstration.
 License: GPL-2
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
 Imports: 
     dplyr,
     gee,
@@ -37,3 +36,4 @@ Imports:
 Depends: 
     R (>= 3.5)
 LazyData: true
+Config/roxygen2/version: 8.0.0
