@@ -11,7 +11,9 @@ bc_irr_gee(
   se_method = c("kc", "md"),
   delay = NULL,
   family = poisson,
-  corstr = "independence"
+  corstr = "independence",
+  total_var = NULL,
+  outcome_type = "count"
 )
 }
 \arguments{
@@ -21,16 +23,30 @@ bc_irr_gee(
 
 \item{data}{A data frame containing the variables.}
 
-\item{se_method}{Method for standard error calculation. Options are "kc" (Kauermann & Carroll) or "md" (Mancl & DeRouen). Defaults to "kc".}
+\item{se_method}{Method for standard error calculation: "kc"
+(Kauermann & Carroll) or "md" (Mancl & DeRouen).
+Defaults to "kc". For proportion or percentage outcomes,
+specify se_method = "md".}
 
 \item{delay}{Integer. The delay parameter. If NULL (default), it is automatically calculated based on the shortest treatment duration.}
 
 \item{family}{The error distribution and link function. Defaults to poisson.}
 
 \item{corstr}{Character string specifying the correlation structure. Defaults to "independence".}
+
+\item{total_var}{Column name containing total trials or intervals.
+Required for proportion and percentage outcomes.
+Ignored when outcome_type = "count".}
+
+\item{outcome_type}{Type of outcome: "count" for frequencies or rates,
+"percentage" for percentages (0–100), or "proportion" for
+proportions (0–1). Defaults to "count".
+Percentage and proportion outcomes require total_var.}
 }
 \value{
-A \code{bcirr} object containing the GEE model, log BC-IRR table, BC-IRR table, delay used, and the processed complete-case data.
+A \code{bcirr} object containing the GEE model, log BC-IRR table,
+BC-IRR table, delay used, and the processed data. The processed data
+may retain rows with missing outcomes that are omitted from model fitting.
 }
 \description{
 Calculate BC-IRR using GEE with Automatic Centering and Delta Method SE
